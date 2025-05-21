@@ -15,7 +15,6 @@ html {
 h1 {
     color: #FFF;
     text-align: center;
-    font-family: "Zen Old Mincho";
     font-size: 4rem;
     font-style: normal;
     font-weight: 600;
@@ -27,7 +26,6 @@ h1 {
 h2 {
     color: #FFF;
     text-align: center;
-    font-family: "Zen Old Mincho";
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 600;
@@ -36,42 +34,58 @@ h2 {
 }
 
 h3 {
-    color: var(--txt);
-    font-size: 24px;
+    color: var(--txt, #301F1E);
+    font-size: 2.5rem;
     font-style: normal;
     font-weight: 900;
     line-height: 180%;
-    letter-spacing: 2.88px;
+    /* 4.5rem */
+    letter-spacing: 0.3rem;
     margin: 0;
 }
 
 h4 {
-    color: var(--txt);
-    font-size: 18px;
+    color: var(--txt, #301F1E);
+    font-size: 1.25rem;
     font-style: normal;
     font-weight: 700;
     line-height: 240%;
-    letter-spacing: 1.8px;
-    margin: 20px 0 0;
+    /* 3rem */
+    letter-spacing: 0.125rem;
+    margin: 0;
 }
 
 h5 {
-    color: var(--FFF);
-    font-size: 14px;
+    color: var(--txt, #301F1E);
+    font-size: 1rem;
     font-style: normal;
     font-weight: 700;
     line-height: 240%;
-    letter-spacing: 1.4px;
+    /* 2.4rem */
+    letter-spacing: 0.1rem;
     margin: 0;
 }
 
 h6 {
-    color: var(--txt_en_01, #C3BBBA);
-    font-size: 14px;
+    color: var(--white_txt, #FFF);
+    font-family: "Zen Old Mincho";
+    font-size: 1rem;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 160%;
-    letter-spacing: 1.4px;
+    /* 1.6rem */
+    letter-spacing: 0.04rem;
+}
+
+h7 {
+    color: var(--white_txt, #FFF);
+    text-align: center;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%;
+    /* 2rem */
+    letter-spacing: 0.05rem;
 }
 
 h8 {
@@ -82,6 +96,18 @@ h8 {
     font-weight: 700;
     line-height: 160%;
     letter-spacing: 1.4px;
+}
+
+h9 {
+    color: var(--txt, #301F1E);
+    text-align: center;
+    font-family: "Zen Old Mincho";
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%;
+    /* 3.2rem */
+    letter-spacing: 0.08rem;
 }
 
 p {
@@ -96,30 +122,6 @@ p {
 }
 
 @media (max-width: 1024px) {
-    h1 {
-        color: #FFF;
-        text-align: center;
-        font-family: "Zen Old Mincho";
-        font-size: 1.5rem;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 180%;
-        /* 2.7rem */
-        letter-spacing: 0.12rem;
-    }
-
-    h2 {
-        color: #FFF;
-        text-align: center;
-        font-family: "Zen Old Mincho";
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 180%;
-        /* 1.575rem */
-        letter-spacing: 0.07rem;
-    }
-
     .header-text {
         position: absolute;
         bottom: 50px;
@@ -137,8 +139,9 @@ p {
 .header {
     position: relative;
     width: 100%;
-    height: 600px;
-    background: url('/common/img/bg-01.png') no-repeat center center/cover;
+    background: url('/common/img/bg-01.png') no-repeat center/cover;
+    height: 100vh;
+    flex-shrink: 0;
 }
 
 .header-content {
@@ -198,6 +201,7 @@ p {
 .btn_top.show {
     opacity: 1;
     pointer-events: auto;
+    cursor: pointer;
 }
 
 @media (min-width: 1024px) {
@@ -240,13 +244,12 @@ p {
 }
 
 .infor-left {
-    width: 420px;
-    height: auto;
+    width: 26.25rem;
+    height: 60.375rem;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
     gap: 24px;
-    margin: 160px 115px 0 0;
 }
 
 .infor-left p {
@@ -259,13 +262,19 @@ p {
     letter-spacing: 1.92px;
 }
 
+
 @media (max-width: 1024px) {
+
     .infor-left {
         display: none;
     }
 
     .infor-right {
         display: none;
+    }
+
+    .infor-cent {
+        margin: 0 24px;
     }
 
     .infor-cent {
@@ -291,12 +300,42 @@ p {
     .header {
         background: url('/common/img/bg-sp.png') lightgray 50% / cover no-repeat;
     }
+
+    h1 {
+        color: #FFF;
+        text-align: center;
+        font-family: "Zen Old Mincho";
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 180%;
+        /* 2.7rem */
+        letter-spacing: 0.12rem;
+    }
+
+    h2 {
+        color: #FFF;
+        text-align: center;
+        font-family: "Zen Old Mincho";
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 180%;
+        /* 1.575rem */
+        letter-spacing: 0.07rem;
+    }
 }
 
 ul.menu-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 36px;
+}
+
+.menu-list li {
+    display: flex;
+    align-items: end;
+    min-width: 250px;
 }
 
 .stick-bottom {
@@ -308,10 +347,6 @@ ul.menu-list {
     align-items: center;
     margin: 70px 24px;
     z-index: 1;
-}
-
-.infor-cent h3 {
-    width: 80%;
 }
 
 .infor-cent ul {
@@ -347,9 +382,8 @@ ul.menu-list {
 }
 
 .infor-right {
-    width: 420px;
-    height: auto;
-    flex-shrink: 0;
+    width: 26.25rem;
+    height: 80.375rem;
     background: linear-gradient(270deg, rgba(27, 15, 12, 0.36) 0%, rgba(129, 72, 57, 0.00) 100%);
     backdrop-filter: blur(20px);
 }
@@ -369,12 +403,6 @@ ul.menu-list {
 .b-menu h7 {
     display: flex;
     justify-content: center;
-    color: #FFF;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 160%;
-    letter-spacing: 0.64px;
 }
 
 .line-head img {
@@ -409,7 +437,6 @@ ul.menu-list {
 }
 
 .group-img {
-    position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -436,7 +463,7 @@ ul.menu-list {
     margin: 0 24px;
 }
 
-.menu-1-img {
+.menu-img {
     display: flex;
     justify-content: center;
 }
@@ -464,11 +491,32 @@ ul.menu-list {
     right: 60px;
 }
 
-.menu-1-bottom {
+.menu-bottom {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    margin-top: 4rem;
+}
+
+.menu-text-detail-b {
+    color: var(--white_txt, #FFF);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%;
+    /* 1.6rem */
+    letter-spacing: 0.04rem;
+}
+
+.menu-text-detail-g {
+    color: var(--txt, #301F1E);
+    font-family: "Zen Old Mincho";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%;
+    /* 1.6rem */
+    letter-spacing: 0.04rem;
 }
 
 .detail ul {
@@ -477,6 +525,7 @@ ul.menu-list {
 }
 
 .btn {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -484,14 +533,19 @@ ul.menu-list {
     padding: 18px 0px;
     gap: 8px;
     position: relative;
+    color: #1B0F0C;
+    text-align: center;
+    font-family: "Zen Old Mincho";
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    /* 1.125rem */
 }
 
 .btn-brown {
     background-color: var(--txt);
-}
-
-.btn-brown a {
-    color: #FFF !important;
+    color: #FFF;
 }
 
 .btn a {
@@ -528,9 +582,10 @@ ul.menu-list {
         display: flex;
         justify-content: center;
         flex-direction: row;
+        align-items: center;
     }
 
-    .menu-1-img {
+    .menu-img {
         width: 421px;
         height: 543.389px;
     }
@@ -623,18 +678,29 @@ ul.menu-list {
 .footer-content p {
     color: var(--txt, #301F1E);
     font-family: "Zen Kaku Gothic New";
-    font-size: 16px;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 500;
     line-height: 160%;
-    margin-bottom: 50px;
+    /* 1.6rem */
 }
 
 /********************
     MARK: Footer
 ********************/
 .footer-content a {
-    color: var(--txt);
+    color: var(--txt, #301F1E);
+    font-family: "Zen Kaku Gothic New";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: 6%;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
 }
 
 .btn-social {
@@ -642,6 +708,7 @@ ul.menu-list {
     flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
+    margin-top: 50px;
 }
 
 .btn-social a {
@@ -663,8 +730,18 @@ ul.menu-list {
     line-height: 15.2px;
     letter-spacing: 0.36px;
     background: linear-gradient(180deg, #503A38 0%, #2C100E 100%);
+    padding: 20px 0;
 }
 
-.copyright h7 {
+.copyright p {
     color: var(--white_txt, #FFF);
+    text-align: center;
+    font-family: "Noto Serif JP";
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 0.95rem;
+    /* 126.667% */
+    letter-spacing: 0.0225rem;
+    margin: 0;
 }
